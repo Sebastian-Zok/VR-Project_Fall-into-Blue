@@ -7,8 +7,7 @@ public class ReflectPlatform : MonoBehaviour
     private Rigidbody rb;
     public bool invertX, invertZ;
     private float timestamp;
-    public GameObject effect;
-
+ 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -32,7 +31,7 @@ public class ReflectPlatform : MonoBehaviour
 
 
                 rb.velocity = new Vector3(x, rb.velocity.y, z);
-                Instantiate(effect, gameObject.GetComponent<Collider>().ClosestPointOnBounds(other.gameObject.transform.position), transform.rotation * Quaternion.Euler(90, 0, 90));
+               // Instantiate(effect, gameObject.GetComponent<Collider>().ClosestPointOnBounds(other.gameObject.transform.position), transform.rotation * Quaternion.Euler(90, 0, 90));
              
                 timestamp = Time.time;
             }
