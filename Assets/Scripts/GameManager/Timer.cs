@@ -6,12 +6,15 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    public int level;
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
     public Text timerText;
 
     public int coinCounter;
     public Text coinText;
+
+    public Text playerInfo;
 
     private void Start()
     {
@@ -39,9 +42,16 @@ public class Timer : MonoBehaviour
 
    public void Coin()
     {
-        print("sd");
-
+  
         coinCounter++;
         coinText.text = coinCounter.ToString() + " of 5";
+        if(coinCounter == 5)
+        {
+            if (PlayerPrefs.GetInt("Level") < level)
+            {
+                PlayerPrefs.SetInt("Level", level + 1);
+            }
+            playerInfo.text = "You won";
+        }
     }
 }
