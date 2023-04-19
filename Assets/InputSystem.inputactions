@@ -1019,6 +1019,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "MainMenu",
+                    "type": "Value",
+                    "id": "faaf51c3-f77f-4c60-a4d3-6a380cea6645",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -1129,6 +1138,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "VelocityRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c700d165-c477-4406-aa7e-12df82f0d160",
+                    "path": "<XRController>{LeftHand}/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MainMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

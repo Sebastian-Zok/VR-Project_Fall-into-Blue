@@ -19,8 +19,6 @@ public class Scene_Manager : MonoBehaviour
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(fadeScreen.duration);
  
- 
-
         operation.allowSceneActivation = true;
     }
 }
