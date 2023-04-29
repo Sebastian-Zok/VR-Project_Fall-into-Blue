@@ -13,7 +13,7 @@ public class ResetLevel : MonoBehaviour
     {
         if (resetClickReference.action.ReadValue<float>() == 1)
         {
-            print("sd");
+            UGS_Analytics.LevelReset();
             Application.LoadLevel(Application.loadedLevel);
         }
     }

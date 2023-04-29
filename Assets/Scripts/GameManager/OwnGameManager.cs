@@ -21,9 +21,10 @@ public class OwnGameManager : MonoBehaviour
     {
         // Starts the timer automatically
         timerIsRunning = true;
-         totalCoins = GameObject.FindGameObjectsWithTag("Coin").Length;
+        totalCoins = GameObject.FindGameObjectsWithTag("Coin").Length;
         coinText.text = coinCounter.ToString() + " of " + totalCoins;
-
+        UGS_Analytics.level = level;
+        UGS_Analytics.timeRemaining = timeRemaining;
     }
     void Update()
     {
@@ -32,15 +33,18 @@ public class OwnGameManager : MonoBehaviour
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
+                UGS_Analytics.timeRemaining = timeRemaining;
                 timerText.text = Mathf.FloorToInt(timeRemaining).ToString();
                 
             }
-            else
+            else // Game over
             {
+                UGS_Analytics.timeRemaining = 0;
                 timerText.text =  "Time has run out!";
                 playerInfo.text = "Try again (Right Grab to reset)";
                 timeRemaining = 0;
                 timerIsRunning = false;
+                UGS_Analytics.LevelCompleted();
             }
         }
     }
@@ -49,14 +53,16 @@ public class OwnGameManager : MonoBehaviour
     {
   
         coinCounter++;
+        UGS_Analytics.coinCounter = coinCounter;
         coinText.text = coinCounter.ToString() + " of "+ totalCoins;
-        if(coinCounter == totalCoins && timerIsRunning)
+        if(coinCounter == totalCoins && timerIsRunning) // Game won?
         {
             if (PlayerPrefs.GetInt("Level") < level)
             {
                 PlayerPrefs.SetInt("Level", level + 1);
             }
             playerInfo.text = "You won";
+            UGS_Analytics.LevelCompleted();
         }
     }
 }
