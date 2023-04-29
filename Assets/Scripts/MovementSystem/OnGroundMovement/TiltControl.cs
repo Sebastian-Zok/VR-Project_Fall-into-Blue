@@ -17,9 +17,9 @@ public class TiltControl : MonoBehaviour
     public void OnGround()
     {
         var angle = Vector3.Angle(cam.transform.forward, rb.velocity);
-        if (angle < maxTiltToBodyRotationRatio && angle > minTiltToBodyRotationRatio)
+        if (angle < maxTiltToBodyRotationRatio && angle > minTiltToBodyRotationRatio) // Check if looking forward
         {
-            Quaternion quat = Quaternion.Euler(0, -cam.transform.localRotation.z * tiltForce, 0);
+             Quaternion quat = Quaternion.Euler(0, -cam.transform.localRotation.z * tiltForce, 0);
             rb.velocity = quat * rb.velocity;
         }
     }

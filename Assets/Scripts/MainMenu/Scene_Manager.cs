@@ -13,12 +13,10 @@ public class Scene_Manager : MonoBehaviour
 
     IEnumerator GoToSceneRoutine(int sceneIndex)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-        operation.allowSceneActivation = false;
-
+ 
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(fadeScreen.duration);
  
-        operation.allowSceneActivation = true;
-    }
+   SceneManager.LoadScene(sceneIndex);
+     }
 }
