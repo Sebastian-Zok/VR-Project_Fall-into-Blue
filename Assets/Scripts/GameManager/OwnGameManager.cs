@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Timer : MonoBehaviour
+public class OwnGameManager : MonoBehaviour
 {
     public int level;
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
     public Text timerText;
 
+     private int totalCoins;
     public int coinCounter;
     public Text coinText;
 
@@ -20,6 +21,9 @@ public class Timer : MonoBehaviour
     {
         // Starts the timer automatically
         timerIsRunning = true;
+         totalCoins = GameObject.FindGameObjectsWithTag("Coin").Length;
+        coinText.text = coinCounter.ToString() + " of " + totalCoins;
+
     }
     void Update()
     {
@@ -34,6 +38,7 @@ public class Timer : MonoBehaviour
             else
             {
                 timerText.text =  "Time has run out!";
+                playerInfo.text = "Try again (Right Grab to reset)";
                 timeRemaining = 0;
                 timerIsRunning = false;
             }
@@ -44,8 +49,8 @@ public class Timer : MonoBehaviour
     {
   
         coinCounter++;
-        coinText.text = coinCounter.ToString() + " of 5";
-        if(coinCounter == 5)
+        coinText.text = coinCounter.ToString() + " of "+ totalCoins;
+        if(coinCounter == totalCoins && timerIsRunning)
         {
             if (PlayerPrefs.GetInt("Level") < level)
             {

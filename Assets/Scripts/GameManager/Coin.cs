@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            GameManager.GetComponent<Timer>().Coin();
+            GameManager.GetComponent<OwnGameManager>().Coin();
             Destroy(this.gameObject);
         }
     }
