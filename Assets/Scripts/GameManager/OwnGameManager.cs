@@ -57,7 +57,7 @@ public class OwnGameManager : MonoBehaviour
         coinText.text = coinCounter.ToString() + " of "+ totalCoins;
         if(coinCounter == totalCoins && timerIsRunning) // Game won?
         {
-            if (PlayerPrefs.GetInt("Level") < level)
+            if (PlayerPrefs.GetInt("Level") < level + 1)
             {
                 PlayerPrefs.SetInt("Level", level + 1);
             }

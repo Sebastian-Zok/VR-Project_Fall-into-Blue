@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m: {fileID: 436881967}
-  sceneIndex: 1
+  sceneIndex: 5
 --- !u!135 &44547244
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m: {fileID: 436881967}
-  sceneIndex: 1
+  sceneIndex: 2
 --- !u!135 &278876293
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m: {fileID: 436881967}
-  sceneIndex: 1
+  sceneIndex: 3
 --- !u!135 &417966878
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1163,6 +1163,7 @@ MonoBehaviour:
   - {fileID: 278876290}
   - {fileID: 417966875}
   - {fileID: 738998734}
+  - {fileID: 44547241}
 --- !u!1 &465786524 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ada5d62ffe762ce4fbccc70dcdbc9022,
@@ -1981,7 +1982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m: {fileID: 436881967}
-  sceneIndex: 1
+  sceneIndex: 4
 --- !u!135 &738998737
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4151,7 +4152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ada5d62ffe762ce4fbccc70dcdbc9022, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ada5d62ffe762ce4fbccc70dcdbc9022, type: 3}
       propertyPath: m_RootOrder
